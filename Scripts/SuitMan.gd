@@ -1,6 +1,5 @@
 extends Node2D
 
-
 const velocity = 100
 var anim = ""
 var anim_player = null
@@ -44,8 +43,8 @@ func _fixed_process(delta):
 	
 	motion = motion * velocity * delta
 	jake_kin.move(motion)
-			
-		
-			
+
+	
+
 func _input(event):
 	pass
