@@ -15,6 +15,7 @@ func _Colisao( body ):
 	
 func _destroy():
 	Principal.qtdgarrafa = Principal.qtdgarrafa - 1
+	Principal.garrafasColetadas = Principal.garrafasColetadas + 1
 	Print(Principal.qtdgarrafa)
 	self.queue_free()
 

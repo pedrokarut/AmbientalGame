@@ -13,5 +13,6 @@ func _on_banana_area_body_enter( body ):
 	
 func _destroy():
 	Principal.qtdbanana = Principal.qtdbanana -1
+	Principal.bananasColetadas = Principal.bananasColetadas + 1
 	print(Principal.qtdbanana) 
 	self.queue_free()

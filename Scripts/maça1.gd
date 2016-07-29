@@ -11,4 +11,6 @@ func _Colisao(body):
 	anim.play("coletada")
 
 func _destroy():
+	Principal.qtdmacas = Principal.qtdmacas - 1
+	Principal.macasColetadas = Principal.macasColetadas + 1
 	self.queue_free()

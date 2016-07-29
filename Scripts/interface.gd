@@ -8,3 +8,5 @@ func _ready():
 func _Jogar():
 	add_child(cenario)
 
+	
+
