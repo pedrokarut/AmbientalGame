@@ -8,7 +8,7 @@ func _ready():
 
 func _Jogar():
 	var cenario_instance = cenario.instance()
-	add_child(cenario_instance)
+	get_tree().change_scene("res://Scenes/Cenario.scn")
 
 
 	

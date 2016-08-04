@@ -12,6 +12,7 @@ func _Colisao(body):
 	anim.play("coletada")
 
 func _destroy():
+	Principal.pontuacao = Principal.pontuacao + 10
 	Principal.qtdVidros = Principal.qtdVidros - 1
 	self.queue_free()
 

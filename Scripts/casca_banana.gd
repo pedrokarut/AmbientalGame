@@ -12,6 +12,7 @@ func _on_banana_area_body_enter( body ):
 	anim.play("fade")
 	
 func _destroy():
+	Principal.pontuacao = Principal.pontuacao + 10
 	Principal.qtdbanana = Principal.qtdbanana -1
 	Principal.bananasColetadas = Principal.bananasColetadas + 1
 	print(Principal.qtdbanana) 
