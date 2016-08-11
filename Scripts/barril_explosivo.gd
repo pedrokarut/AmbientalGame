@@ -13,13 +13,16 @@ func _process(delta):
 	var pos = get_pos()
 	pos.y += 100 * delta
 	set_pos(pos)
+	
+	if pos.y > 700:
+		_destroy()
 
 func _Colisao(body):
-	anim.play("explosion")
+	var pos = get_node("Area2D").get_pos()
+	
 	if body.get_name() == "KinematicSuitMan2D":
+		anim.play("explosion")
 		Principal.vidas = Principal.vidas - 1
-		
-
 	
 func _destroy():
 	Principal.qtdbarris = Principal.qtdbarris - 1

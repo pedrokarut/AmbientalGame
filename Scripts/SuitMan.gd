@@ -7,7 +7,6 @@ var anim_new = ""
 var jake_kin
 
 func _ready():
-	set_process_input(true)
 	set_fixed_process(true)
 	anim_player = get_node("KinematicSuitMan2D/SpriteSuitMan/AnimationPlayer")
 	jake_kin = get_node("KinematicSuitMan2D")
@@ -43,8 +42,3 @@ func _fixed_process(delta):
 	
 	motion = motion * velocity * delta
 	jake_kin.move(motion)
-
-	
-
-func _input(event):
-	pass
