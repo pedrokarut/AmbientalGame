@@ -52,7 +52,11 @@ func _process(delta):
 		get_tree().get_current_scene().get_node("./Painel_Game_Over/lblPontuacao").set_text(str(pontuacao))
 		get_tree().get_current_scene().get_node("./Painel_Game_Over").show()
 		vidas = 3
-	
+		#if the pontuation is bigger than 100, the Phase2 button is shown
+		var pont =  get_tree().get_current_scene().get_node("./Painel_Game_Over/lblPontuacao").get_text().to_int() 
+		if pont>=100:
+			get_tree().get_current_scene().get_node("./Painel_Game_Over/btFase2").show()
+			get_tree().get_current_scene().get_node("./Painel_Game_Over/btRecomecar").show()
 
 	if qtdbag ==0:		#to create new bags
 		var bag_instance = bag.instance()
@@ -88,7 +92,7 @@ func _process(delta):
 	if qtdbarris <=0:
 		var barril_instance = barril.instance(true)
 		get_tree().get_current_scene().get_node("gerados").add_child(barril_instance)
-		barril_instance.set_pos(Vector2(rand_range(0,600), 150))
+		barril_instance.set_pos(Vector2(rand_range(0,600), 5))
 		qtdbarris = qtdbarris + 1
 
 	
@@ -119,3 +123,7 @@ func _button_continuar_painel_informacoes_pressed():
 	get_tree().set_pause(false)
 	get_node("Painel_Informacoes").hide()
 	
+	
+func _button_Fase2_pressed():
+	get_tree().change_scene("res://Scenes/Fase2.scn")
+	get_tree().get_current_scene().get_node("./Painel_Game_Over").hide()
