@@ -230,3 +230,10 @@ func _on_btPlay_pressed():
 
 func _on_ButtonInicio_pressed():
 	get_tree().change_scene("res://Scenes/interface.scn")
+	
+	
+func _play_right():
+	get_node("SamplePlayer").play("Power_Up")
+	
+func _play_wrong():
+	get_node("SamplePlayer").play("Computer_Error")

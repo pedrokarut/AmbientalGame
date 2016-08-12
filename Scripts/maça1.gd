@@ -8,6 +8,7 @@ func _ready():
 
 	
 func _Colisao(body):
+	get_node("SamplePlayer").play("Power_Up")
 	anim.play("coletada")
 
 func _destroy():

@@ -18,9 +18,11 @@ func _process(delta):
 		_destroy()
 
 func _Colisao(body):
+	
 	var pos = get_node("Area2D").get_pos()
 	
 	if body.get_name() == "KinematicSuitMan2D":
+		get_node("SamplePlayer").play("Grenade Explosion")
 		anim.play("explosion")
 		Principal.vidas = Principal.vidas - 1
 	

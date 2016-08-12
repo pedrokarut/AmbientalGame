@@ -22,6 +22,7 @@ export var pontuacao = 0 		#to storage all the pontuation
 
 
 func _ready():
+	
 	if has_node("pontuacao/Pontos"):			#setar a pontuação 
 		get_node("pontuacao/Pontos").set_text(str(pontuacao))
 		

@@ -9,6 +9,7 @@ func _ready():
 
 
 func _on_banana_area_body_enter( body ):
+	get_node("SamplePlayer").play("Power_Up")
 	anim.play("fade")
 	
 func _destroy():
