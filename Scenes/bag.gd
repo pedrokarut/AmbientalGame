@@ -10,6 +10,7 @@ func _ready():
 
 	
 func _Colisao( body ):
+	get_node("SamplePlayer").play("Power_Up")
 	bag_anim.play("coletado")
 
 func _destroy():
