@@ -5,12 +5,14 @@ var anim = ""
 var anim_player = null
 var anim_new = ""
 var jake_kin
+var pontuacao = 0
+var vidas = 3
 
 func _ready():
 	set_fixed_process(true)
 	anim_player = get_node("KinematicSuitMan2D/SpriteSuitMan/AnimationPlayer")
 	jake_kin = get_node("KinematicSuitMan2D")
-	
+	get_node("vidas").set_text(str(vidas))
 	
 func _fixed_process(delta):
 	var motion = Vector2()
@@ -42,3 +44,18 @@ func _fixed_process(delta):
 	
 	motion = motion * velocity * delta
 	jake_kin.move(motion)
+
+func _on_DetectarColisao_area_enter( area ):
+	var nome = area.get_parent().get_name()
+	
+	if "Barril_Explosivo" in nome:
+		vidas -= 1
+		print(nome)
+		get_node("vidas").set_text(str(vidas))
+		
+	else:
+		print(nome)
+		pontuacao += 10
+		get_node("pontuacao").set_text(str(pontuacao))
+		
+		

@@ -15,7 +15,7 @@ func _process(delta):
 	set_pos(pos)
 	
 	if pos.y > 700:
-		_destroy()
+		queue_free()
 
 func _Colisao(body):
 	
@@ -24,10 +24,5 @@ func _Colisao(body):
 	if body.get_name() == "KinematicSuitMan2D":
 		get_node("SamplePlayer").play("Grenade Explosion")
 		anim.play("explosion")
-		Principal.vidas = Principal.vidas - 1
-	
-func _destroy():
-	Principal.qtdbarris = Principal.qtdbarris - 1
-	self.queue_free()
 
 
